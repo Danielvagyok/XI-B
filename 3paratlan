@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream be("bac.txt");
+
+    int x;
+    int paratlan_szamok = 0;
+    int prevmax = -1;
+    int max = -1;
+
+    while(be >> x || paratlan_szamok <=3){
+      if(x % 2 == 1){
+        paratlan_szamok++;
+      }else if(paratlan_szamok == 3){
+        if(x > prevmax){
+          if(x > max){
+            prevmax = max;
+            max = x;
+            }else{
+              prevmax = x;
+            }
+            }
+      }
+    }
+
+    if(prevmax > 0 && max > 0){
+      cout << prevmax << endl << max << endl;
+    }
+
+    return 0;
+}
