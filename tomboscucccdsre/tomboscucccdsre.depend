@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1569907771 source:d:\daniello\tomboscucccdsre\main.cpp
+	<iostream>
+	<fstream>
+
