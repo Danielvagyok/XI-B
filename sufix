@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string a;
+
+    getline(cin,a);
+
+    string b = "";
+
+    for(int  i = 1 ; i < 4 ; i++){
+        b[i-1] = a[a.length()-i];
+    }
+    if(a.length()>3)
+    {cout << b;}else{cout << "nedeterminat";}
+
+
+    return 0;
+}
