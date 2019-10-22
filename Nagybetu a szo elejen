@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    string x;
+
+    getline(cin,x);
+
+    transform(x.begin()+0 , x.begin()+1 , x.begin()+0 , ::toupper);
+    size_t hely = x.find(" ");
+    while(hely != string::npos){
+        transform(x.begin()+hely+1 , x.begin()+hely+2 , x.begin()+hely+1 , ::toupper);
+        hely = x.find(" " , hely+1);
+    }
+
+    cout << x;
+
+    return 0;
+}
