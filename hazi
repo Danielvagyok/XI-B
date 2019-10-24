@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    ifstream in("input.txt");
+    ofstream out_vez("vezetekes.txt");
+    ofstream out_orange("orange.txt");
+    ofstream out_vod("vodafone.txt");
+    ofstream out_digi("digi.txt");
+
+    string x[25];
+
+    int i = 0;
+    while(in >> x[i]){
+        if(x[i].length() == 6){
+            x[i].insert(0 , "0040260");
+            out_vez << x[i];
+        }else if(x[i].length() == 8){
+            x[i].insert(0 , "00407");
+            if(x[i][5] == '2')
+                out_vod << x[i];
+            if(x[i][5] == '4')
+                out_orange << x[i];
+            if(x[i][5] == '7')
+                 out_digi << x[i];
+
+        }
+
+        i++;
+    }
+
+    return 0;
+}
